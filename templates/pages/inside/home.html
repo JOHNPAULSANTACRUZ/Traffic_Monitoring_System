@@ -1,0 +1,99 @@
+{% extends "/base/internal.html" %}
+
+{% block title%}
+<title> {{page_title}} | {{inside_Title}} </title>
+
+{% endblock %}
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script defer>
+    $(document).ready(function() {
+        var containerCount = 0;
+
+        $("#add-container-btn").click(function() {
+    // Increment the container count to give a unique ID to the new container
+    containerCount++;
+
+    // Create a new container div
+    var containerDiv = '<div class="container" id="container-' + containerCount + '">' +
+                        '<label for="session_" +containerCount>Select Camera for Session '+ containerCount+'</label>' +
+                        '<form action="{{ url_for("manage_bounding") }}" method="GET">' +
+                        '<br>' +
+                        '<select id="camera_id">' +
+                        '<option name="camera_id" value="0">Webcam</option>' +
+                        '<option name="camera_id" value="1">Webcam 2</option>' +
+                        '</select>' +
+                        '<button type="submit" >Select Camera </button>' +
+                        '<p id="content">This is Video Container # ' + containerCount + '</p>' +
+                        
+                        '</form>' +
+                        '</div>';
+           // containerDiv.append("<label for='ip_add'>Ip Address:</label>"+"<br>" );
+            //containerDiv.append("<input type='text' minlength='7' maxlength='15' size='15' pattern='^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$'>")
+            //'<img id="img-container" src="{{ url_for("video_feed") }}">' +
+            // Append the new container to the container list
+            $("#container-list").append(containerDiv);
+        });
+    });
+</script>
+{% endblock %}
+{% block active %}
+<nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+                <i class="bi bi-house-fill"></i>
+                <p>Home</p>
+            </a>
+            <a href="TrafficLightAPI" class="nav-link">
+                <i class="bi bi-camera"></i>
+                <p>Traffic Light API</p>
+            </a>
+            <a href="index" id="logoutButton" class="nav-link">
+                <i class="bi bi-door-closed-fill"></i>
+                <p>Logout</p>
+            </a>
+        </li>
+        </div>
+        {% endblock %}
+{% block content %}
+<div class="content-wrapper">
+<div class="content-header">
+<div class="container-fluid">
+<div class="row mb-2">
+<div class="col-sm-6">
+<section class="">
+    <h1>Available Cameras:</h1>
+    <form action="{{ url_for('manage_bounding') }}" method="GET">
+        <select name="selected_cam" id="camera_selection">
+            {% for camera_id, brand_name in nested_array %}
+            <option name = "camera_id" value="{{ camera_id }}">
+                {{ brand_name }}
+            </option>
+            {% endfor %}
+
+        </select>
+
+        <button type="submit">Select Camera</button>
+
+    </form>
+    <h4>RTSP Protocol:</h4>
+    <input type="text" id="rtsp-url" name="rtsp-url" placeholder="rtsp://your_rtsp_stream_url">
+    <div id="container-list">
+        <!-- Existing containers will be added here -->
+        <!-- <img id = "camera-stream" src="{{ url_for('video_feed') }}"> -->
+    </div>
+    <div class="stream-container">
+        <img id = "camera-stream" src="{{ url_for('video_feed') }}">
+    </div>
+</div>
+<button id="add-container-btn" class="floating-btn">Add Camera</button>                        </section>
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}
+{% block scriptFooter %}
+
+{% endblock %}

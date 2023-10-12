@@ -1,0 +1,52 @@
+{% extends "/base/internal.html" %}
+
+{% block title%}
+<title> {{page_title}} | {{inside_Title}} </title>
+{% endblock %}
+
+{% block script %}
+<script defer src="static\dist\js\api.js"></script>
+{% endblock %}
+{% block active %}
+<nav class="mt-2">
+  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+    <li class="nav-item menu-open">
+      <a href="home" class="nav-link ">
+        <i class="bi bi-house-fill"></i>
+        <p>
+          Home
+        </p>
+      </a>
+      <a href="#" class="nav-link active">
+        <i class="bi bi-camera"></i>
+        <p>
+          Traffic Light API
+        </p>
+      </a>
+      <a href="login" id= "logoutButton" class="nav-link">
+        <i class="bi bi-door-closed-fill"></i>
+        <p>
+          Logout
+        </p>
+      </a>
+    </li>
+</div>
+{% endblock %}
+  <!-- Content Wrapper. Contains page content -->
+{% block content %}
+  <div class="content-wrapper">
+    <div class="content-header">
+      
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <section class="col-lg-7 connectedSortable">
+              <!-- COMMENT DAW -->
+              <p> try</p>
+
+            </section> 
+          </div> 
+        </div>
+      </div>
+  </div>
+{% endblock %}

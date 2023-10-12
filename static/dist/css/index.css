@@ -1,0 +1,108 @@
+::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+
+  body {
+    background-image: url("../img/Login-Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .row-center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card {
+    border: none;
+    height: 320px;
+    border: 2px solid #888;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .forms-inputs {
+    position: relative;
+  }
+
+  .forms-inputs span {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    background-color: #fff;
+    padding: 1px 1px;
+    font-size: 15px
+  }
+
+  .forms-inputs input {
+    margin-bottom: 4px;
+    height: 50px;
+    border: 2px solid #eee;
+    width: 100%;
+  }
+
+  .forms-inputs input:focus {
+    box-shadow: none;
+    outline: none;
+    border: 2px solid #000
+  }
+
+  .button {
+    margin-bottom: 3px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .forgotPassword{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .success-data {
+    display: flex;
+    flex-direction: column
+  }
+
+  .bxs-badge-check {
+    font-size: 90px
+  }
+  .loginTitle{
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size:xx-large;
+    color:whitesmoke;
+  }
+  .Title{
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size:xx-large;
+  }
+.forgot{
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+body{
+  padding:100px 0;
+  background-color:#efefef
+}
+a, a:hover{
+  color:#333
+}

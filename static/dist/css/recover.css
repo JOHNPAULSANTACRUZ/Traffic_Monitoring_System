@@ -1,0 +1,105 @@
+.bxs-badge-check {
+    font-size: 90px;
+  }
+  
+  .card {
+    border-radius: 15px;
+  }
+  
+  .centerBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    height: 100vh;
+  }
+  
+  .forgot {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+  }
+  
+  .form-outline {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .form-outline i{
+    font-size: 1.5em;
+    position: absolute;
+    top: 14px;
+    right: 11px;
+    visibility: hidden;
+  }
+  .form-outline.success input{
+    border-color: #2ecc71;
+  }
+  .form-outline.error input{
+    border-color: #e74c3c;
+  }
+  
+  .form-outline.success i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+  }
+  .form-outline.error i.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
+    right: 12px;
+  }
+  .form-outline small{
+    visibility: hidden;
+  }
+  .form-outline.error small{
+    color: #e74c3c;
+    visibility: visible;
+  }
+  .form-outline.success small{
+    color: #2ecc71;
+    visibility: hidden;
+  }
+  
+  .mask {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .success-data {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .forgotPassword {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button {
+    margin-bottom: 3px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .whole {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../img/recover-background.jpg');
+  }
+  

@@ -1,0 +1,72 @@
+{% extends '/pages/inside/home.html' %}
+{% block title %}
+<title> {{page_title}} | {{inside_Title}} </title>
+<link rel="stylesheet" href="{{ url_for('static', filename='dist/css/styles.css') }}">
+{% endblock %}
+{% block content %}
+<div class="content-wrapper">
+<div class="content-header">
+<div class="container-fluid">
+<div class="row mb-2">
+<div class="col-sm-6">
+    <div id="container-list">
+        <!-- Existing containers will be added here -->
+        <p class="show_normalized" id="coords" style="display: none;">x: <span id="x"></span> | y: <span
+                id="y"></span></p>
+        <label for="session_" +containerCount>Editing Bounding Box Camera for Session</label>
+    <div class="flex">
+        <div class="right">
+            <canvas id="myCanvas">
+            </canvas>
+                <div class ="edit-buttons">
+                    <button style="background-color:#d9534f " id="clear" class="widgetButton"> ✨ Clear </button>
+                    <button style="background-color:#f0ad4e " onClick="window.location.reload(); " class ="widgetButton" > 📸 Re-Capture </button>
+                    <button style="background-color:#5cb85c " id ="save-coordinates" class="widgetButton">💾 Save </button>
+                    <pre  name="coordinates" id="array">
+                    </pre>
+                <!-- <p id="mode">Mode: Polygon (Press <kbd>L</kbd> to switch to Line drawing mode)</p> 
+                class="coordinates"-->
+            </div>
+            
+        </div>
+            <div class="right">
+
+            </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    {% endblock %}
+    {% block scriptFooter %}
+<script src="{{ url_for('static', filename='dist/js/script.js') }}"></script>
+
+<script>
+$(document).ready(function(){
+    $('#save-coordinates').click(function(){
+        // Get the text content from the 'array' <pre> element
+        const coordinatesText = $('#array').text();
+
+        // Check if coordinatesText is a non-empty string
+        if (coordinatesText.trim() === '') {
+            alert('Coordinates are empty, draw to save');
+            return;
+        }else{
+            $.ajax({
+                type: 'POST', 
+                url: "{{ url_for('save_bounding') }}",
+                contentType: 'application/json',
+                data: JSON.stringify(
+                    coordinatesText
+                ),
+            });
+        }
+    });
+});
+</script>
+
+    
+    {% endblock %}

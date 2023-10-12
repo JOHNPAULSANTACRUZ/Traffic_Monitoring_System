@@ -1,0 +1,47 @@
+{% extends "/base/external.html" %}
+{% block head %}
+<title>Recover Account | Traffic Light API</title>
+<script defer src="{{url_for('static', filename='dist/js/register.js') }}"></script>  
+<link rel="stylesheet" href="{{url_for('static', filename='dist/css/recover.css') }}">
+{% endblock %}
+    {% block content %} 
+    <section class="whole">
+    <div class="mask">
+      <div class="container">
+        <div class="centerBody">
+          <div class="col-xl-6">
+            <div class="card">
+              <div class="card-body p-5">
+                <h2 class="title">Recover account</h2>
+                <form class="form" id = "form" method="GET">
+                <div class="form-data">
+                  <!-- EMAIL -->
+                  <div class="form-outline">
+                            <input class="form-control form-control-lg" id = "email"
+                            placeholder="Email" type="email"
+                            autocomplete="off" >
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
+                            <small>Error Message</small>
+                  </div>
+                  <!-- SEND BUTTON -->
+                  <div>
+                              <button class="btn btn-info btn-block btn-lg"
+                              type="submit">Send Code </button>
+                  </div>
+                  <!-- LINK TO LOGIN -->
+                  <p class="text-center text-muted mt-5 mb-0">
+                              <a href="login"
+                              class="fw-bold text-body"><u>Go Back</u></a></p>
+                </form>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock%} 
+  </body>
+</html>
