@@ -36,7 +36,7 @@ numpy==1.25.1
 oauthlib==3.2.2
 opencv-contrib-python==4.8.0.74
 opencv-python==4.8.0.74
-packaging==23.1
+packaging==23.2
 pandas==2.0.3
 parso==0.8.3
 pickleshare==0.7.5
