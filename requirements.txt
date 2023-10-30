@@ -18,7 +18,7 @@ Flask-SQLAlchemy==3.0.5
 fonttools==4.41.0
 google-auth==2.22.0
 google-auth-oauthlib==1.0.0
-greenlet==2.0.2
+greenlet==3.0.1
 grpcio==1.56.0
 idna==3.4
 ipython==8.14.0
