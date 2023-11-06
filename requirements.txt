@@ -19,7 +19,7 @@ fonttools==4.41.0
 google-auth==2.22.0
 google-auth-oauthlib==1.0.0
 greenlet==2.0.2
-grpcio==1.56.0
+grpcio==1.59.2
 idna==3.4
 ipython==8.14.0
 itsdangerous==2.1.2
